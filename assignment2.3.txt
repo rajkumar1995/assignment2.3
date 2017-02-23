@@ -1,0 +1,20 @@
+Explain in detail: 
+              Each component of Hadoop 1.x
+              NAmeNode -The NameNode is the centerpiece of an HDFS file system. It keeps the directory tree of all files in the file system, and tracks where across the cluster the file data is kept. It does not store the data of these files itself.
+            It is a software that can be run on commodity hardware
+            The system having the namenode acts as the master server 
+
+Secondary Namenode -  Secondary Namenode helps to overcome by taking over responsibility of merging editlogs with fsimage from the namenode.
+                      this is not a backup for Namenode
+
+DataNode - DataNode is responsible for storing the actual data in HDFS.
+           DataNode is also known as the Slave
+           NameNode and DataNode are in constant communication.
+           When a DataNode starts up it announce itself to the NameNode along with the list of blocks it is responsible for
+
+jobTracker - Job Tracker is used to assign MapReduce Tasks to Task Trackers in the Cluster of Nodes
+              Job Tracker maintains all the Task Trackers status like Up/running, Failed, Recovered etc.
+
+TaskTracker - Task Tracker executes the Tasks which are assigned by Job Tracker
+                sends the status of those tasks to Job Tracker
+               Runs individual map-reduce jobs on datanodes
